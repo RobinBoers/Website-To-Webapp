@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website-To-Webapp</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons-192.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+    <meta name="theme-color" content="#db4938" />
+</head>
+<body>
+    <template id="index.html">
+        <ons-page><p>test</p></ons-page>
+    </template>
+    <template id="about.html">
+    </template>
+    <template id="store.html">
+    </template>
+
+    <ons-page>
+        <ons-toolbar>
+          <div class="center">Website-To-App</div>
+        </ons-toolbar>
+      
+        <ons-tabbar position="auto">
+          <ons-tab page="index" label="Website-To-App" icon="fa-home" active>
+          </ons-tab>
+          <ons-tab page="store" label="Store" icon="fa-shopping-bag">
+        </ons-tab>
+          <ons-tab page="about" label="About" icon="md-info">
+          </ons-tab>
+        </ons-tabbar>
+      </ons-page>
+      
+      <template id="index">
+        <ons-page id="Website-To-App">
+          <p style="text-align: center;">
+            Hi, welcome to Website-To-Webapp<br>
+            With this tool you can make a webapp from any website!<br>
+            Just enter a URL below, or use the store to pick a webapp.<br>
+          </p>
+
+          <p style="text-align: center;">
+            <ons-input id="name" placeholder="Enter the name of your app..." modifier="underbar"></ons-input>
+          </p>
+        
+          <p style="text-align: center;">
+            <ons-input
+              id="uri"
+              placeholder="Enter the URI..."
+              modifier="underbar"
+            >
+            </ons-input>
+          </p>
+        
+          <p style="text-align: center;">
+            <ons-button onclick="submit()">Create app</ons-button>
+          </p>
+
+        </ons-page>
+      </template>
+      
+      <template id="about">
+        <ons-page id="About">
+            <p style="text-align: center;">
+              Hi,<br>
+              With Website-To-Webapp you can make a webapp from any website.<br>
+              It's as simple as entering a URL and you're done!<br>
+              I build it with html, css, js and php and for the UI I'm onsenUI and fontawesome.<br><br>
+              Made by Robin Boers<br>
+              See my website for more: <a href="https://geheimesite.nl">geheimesite.nl</a><br><br>
+              Version: v0.1-beta
+            </p>
+          </ons-page>
+      </template>
+
+      <template id="store">
+        <ons-page id="About">
+            <p style="text-align: center;">
+              Store coming soon.<br>In the store you can see populair websites, and add them to your homescreen.
+            </p>
+          </ons-page>
+      </template>
+
+
+      <script>
+            document.addEventListener('prechange', function(event) {
+            document.querySelector('ons-toolbar .center')
+                .innerHTML = event.tabItem.getAttribute('label');
+            });
+
+            const submit = () => {
+                const name = document.querySelector('#name').value;
+                const uri = document.querySelector('#uri').value;
+                
+            }
+      </script>
+</body>
+</html>
