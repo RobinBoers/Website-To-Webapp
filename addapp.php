@@ -34,8 +34,6 @@
     <img src="https://geheimesite.nl/app/IMG_3055.PNG">
     <p><b>3. </b>Click on 'Add'</p>
     
-    <p><b>4. </b>If it doesn't work, click this link: <a href="<?php echo $uri; ?>"><?php echo $name; ?></a></p>
-
     </center></main>
     <script>
         var name = "<?php echo $name; ?>";
@@ -46,9 +44,9 @@
         "name": "<?php echo $name; ?>",
         "short_name": "<?php echo $name; ?>",
         "description": "<?php echo $name; ?> app generated with Website-To-Webapp",
-        "start_url": "<?php echo $uri; ?>",
-        "scope": "<?php echo $uri; ?>",
+        "start_url": "https://geheimesite.nl/library/projects/Website-To-Webapp/app.php?uri=<?php echo $uri; ?>",
         "background_color": "#000000",
+        "display": "standalone",
         "theme_color": "#0f4a73",
         }
         const stringManifest = JSON.stringify(myDynamicManifest);
